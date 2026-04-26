@@ -1,0 +1,9 @@
+# วางรูปภาพคู่มือ HVCI ที่นี่
+# 
+# รูปที่ต้องการ (แต่ละวิธีมี 1 รูป):
+# - method1.png - หน้า Windows Security → Core isolation → Memory integrity (สวิตช์ On/Off)
+# - method2.png - PowerShell (Admin) รันคำสั่งปิด HVCI
+# - method3.png - PowerShell (Admin) รันคำสั่งเปิด HVCI
+# - method4.png - CMD (Admin) รันคำสั่งปิด HVCI
+# - method5.png - CMD (Admin) รันคำสั่งเปิด HVCI
+# - check.png  - System Information (msinfo32) แสดงสถานะ HVCI
