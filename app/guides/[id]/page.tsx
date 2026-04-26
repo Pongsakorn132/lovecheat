@@ -4,6 +4,53 @@ import { ArrowLeft, Download, ExternalLink, AlertTriangle } from 'lucide-react';
 import ParticlesBackground from '@/components/ParticlesBackground';
 
 const guidesData: Record<string, any> = {
+  'ghost-spectre': {
+    title: '💻 Ghost Spectre Windows (รุ่น Def)',
+    description: 'Windows สำหรับสายเกม ลื่น FPS นิ่ง ไม่มีปัญหาจุกจิก แนะนำรุ่น Def (มี Defender)',
+    warning: 'คำเตือนสำคัญ: การลง Windows ใหม่จะทำให้ข้อมูลหายเกลี้ยง! อย่าลืมแบ็คอัพงานหรือรูปสำคัญไว้ใน Drive อื่นก่อนลงนะ!',
+    steps: [
+      {
+        title: '🔥 ทำไมต้องรุ่น "Def"?',
+        content: '✅ เสถียรกว่า: รุ่น Def จะยังมีไฟล์ระบบของ Windows Defender ครบ ทำให้ไม่มีปัญหาเวลาเปิดโปรแกรมบางตัวที่เรียกหาไฟล์ความปลอดภัย\n\n✅ สั่งเปิด-ปิดได้เอง: เรามีเครื่องมือ Defender Control ไว้คอยสั่ง "ปิดถาวร" ได้เอง 100% ทำให้ไม่ต้องกลัวโดนแอบลบไฟล์\n\n✅ โคตรลื่น: ตัด Service ขยะของ Windows ออกเกือบหมด ทำให้คอมเบามาก และค่า Latency ต่ำ ยิงคมขึ้นแน่นอน\n\n✅ Ghost Toolbox: มีเมนูพิเศษให้ปรับแต่งคอมเพิ่มได้ง่ายๆ ในคลิกเดียว',
+      },
+      {
+        title: '📥 ดาวน์โหลด Ghost Spectre',
+        content: 'ดาวน์โหลดไฟล์ ISO จากลิงก์ด้านล่าง (รุ่น Def)',
+        link: 'https://pixeldrain.com/u/qicbkvNh',
+        linkText: 'ดาวน์โหลด Ghost Spectre (Def)',
+      },
+      {
+        title: '🛠️ เตรียม Flashdrive',
+        content: '1. ดาวน์โหลดโปรแกรม Rufus จาก https://rufus.ie/th/\n2. เสียบ Flashdrive (ขนาดอย่างน้อย 8 GB)\n3. เปิดโปรแกรม Rufus\n4. เลือก Flashdrive ของคุณ\n5. เลือกไฟล์ ISO ที่ดาวน์โหลดมา\n6. Partition scheme: เลือก "GPT"\n7. คลิก "START"\n8. รอจนเสร็จ',
+        link: 'https://rufus.ie/th/',
+        linkText: 'ดาวน์โหลด Rufus',
+      },
+      {
+        title: '💾 แบ็คอัพข้อมูล (สำคัญมาก!)',
+        content: '⚠️ ก่อนลง Windows ใหม่:\n\n1. คัดลอกไฟล์สำคัญไปไว้ที่อื่น (Drive D, E หรือ External HDD)\n2. แบ็คอัพรูปภาพ, เอกสาร, เซฟเกม\n3. จดรหัสผ่าน WiFi, Account ต่างๆ\n4. ตรวจสอบให้แน่ใจว่าแบ็คอัพครบแล้ว\n\n❌ ข้อมูลใน Drive C จะหายเกลี้ยง!',
+      },
+      {
+        title: '🔧 ติดตั้ง Windows',
+        content: '1. เสียบ Flashdrive ที่ทำไว้\n2. รีสตาร์ทคอมพิวเตอร์\n3. กด F2, F12, หรือ Del เพื่อเข้า BIOS/Boot Menu\n4. เลือก Boot จาก Flashdrive\n5. เริ่มติดตั้ง Windows\n6. ⚠️ เลือกเวอร์ชันที่มีคำว่า "(Def)" ต่อท้ายเสมอ\n7. เลือก Drive C เพื่อติดตั้ง\n8. รอจนเสร็จ (10-20 นาที)',
+      },
+      {
+        title: '⚙️ ตั้งค่าหลังติดตั้ง',
+        content: '1. ติดตั้ง Driver การ์ดจอ (NVIDIA/AMD)\n2. ติดตั้ง Driver อื่นๆ ที่จำเป็น\n3. ติดตั้ง DirectX และ VC++ Runtime\n4. ดาวน์โหลด Defender Control เพื่อปิด Windows Defender\n5. ปรับแต่งเพิ่มเติมผ่าน Ghost Toolbox',
+      },
+      {
+        title: '🛡️ ปิด Windows Defender',
+        content: 'หลังลง Ghost Spectre เสร็จ:\n\n1. ดาวน์โหลด Defender Control (ดูในคู่มือ "ปิดแอนตี้ไวรัสถาวร")\n2. รัน Defender Control\n3. คลิก "Disable Windows Defender"\n4. รีสตาร์ทคอมพิวเตอร์\n5. เสร็จแล้ว!',
+      },
+    ],
+    tips: [
+      'Ghost Spectre เหมาะสำหรับสายเกมที่ต้องการ FPS สูง และ Latency ต่ำ',
+      'รุ่น Def เสถียรกว่ารุ่นอื่น เพราะมีไฟล์ Defender ครบ',
+      'ควรแบ็คอัพข้อมูลก่อนลง Windows ใหม่เสมอ',
+      'หลังลงเสร็จ ควรติดตั้ง Driver การ์ดจอก่อนเป็นอันดับแรก',
+      'ใช้ Ghost Toolbox เพื่อปรับแต่งเพิ่มเติมได้ง่ายๆ',
+      'ถ้าไม่แน่ใจ ไม่ควรลง - ใช้ Windows ปกติดีกว่า',
+    ],
+  },
   'sync-time': {
     title: 'วิธี Sync Time - ตั้งเวลาคอมพิวเตอร์ให้ตรง',
     description: 'แก้ปัญหาเวลาคอมพิวเตอร์ไม่ตรง ไม่สามารถเข้าเว็บไซต์ หรือเกมได้',

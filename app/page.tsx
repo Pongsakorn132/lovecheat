@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Download, Shield, Settings, HelpCircle, Sparkles } from 'lucide-react';
+import { Download, Shield, Settings, HelpCircle, Sparkles, Clock } from 'lucide-react';
 import ParticlesBackground from '@/components/ParticlesBackground';
 
 export default function Home() {
@@ -35,10 +35,17 @@ export default function Home() {
       gradient: 'from-indigo-500 to-indigo-600',
     },
     {
+      id: 'ghost-spectre',
+      title: 'Ghost Spectre Windows',
+      description: 'Windows สำหรับสายเกม ลื่น FPS นิ่ง ไม่จุกจิก',
+      icon: Sparkles,
+      gradient: 'from-violet-500 to-purple-600',
+    },
+    {
       id: 'sync-time',
       title: 'Sync Time - ตั้งเวลา',
       description: 'แก้ปัญหาเวลาคอมพิวเตอร์ไม่ตรง',
-      icon: Settings,
+      icon: Clock,
       gradient: 'from-purple-500 to-indigo-500',
     },
     {
