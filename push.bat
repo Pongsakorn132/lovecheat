@@ -14,15 +14,16 @@ git add .
 
 REM Commit
 echo Committing...
-git commit -m "Add Chrome download fix guide"
+git commit -m "Update LOVECHEAT - Add new guides"
 
-REM Push
+REM Push (Force)
 echo Pushing to GitHub...
-git push origin main
+git push -f origin main
 
 echo.
 echo ========================================
 echo Push completed!
 echo Check: https://github.com/Pongsakorn132/lovecheat
+echo Vercel will auto-deploy in 1-2 minutes
 echo ========================================
 pause

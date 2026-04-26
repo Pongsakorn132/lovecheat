@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Download, Shield, Settings, HelpCircle, Sparkles, Clock } from 'lucide-react';
+import { Download, Shield, Settings, HelpCircle, Sparkles, Clock, Monitor } from 'lucide-react';
 import ParticlesBackground from '@/components/ParticlesBackground';
 
 export default function Home() {
@@ -54,6 +54,13 @@ export default function Home() {
       description: 'วิธีแก้เมื่อ Chrome บล็อกการดาวน์โหลดไฟล์',
       icon: Download,
       gradient: 'from-red-500 to-orange-500',
+    },
+    {
+      id: 'remote-assistance',
+      title: 'บริการช่วยเหลือรีโมท',
+      description: 'ขอความช่วยเหลือผ่าน AnyDesk',
+      icon: Monitor,
+      gradient: 'from-teal-500 to-cyan-600',
     },
     {
       id: 'basic-troubleshooting',
