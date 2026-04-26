@@ -35,6 +35,13 @@ export default function Home() {
       gradient: 'from-indigo-500 to-indigo-600',
     },
     {
+      id: 'sync-time',
+      title: 'Sync Time - ตั้งเวลา',
+      description: 'แก้ปัญหาเวลาคอมพิวเตอร์ไม่ตรง',
+      icon: Settings,
+      gradient: 'from-purple-500 to-indigo-500',
+    },
+    {
       id: 'chrome-download',
       title: 'แก้ Chrome บล็อกดาวน์โหลด',
       description: 'วิธีแก้เมื่อ Chrome บล็อกการดาวน์โหลดไฟล์',

@@ -4,6 +4,44 @@ import { ArrowLeft, Download, ExternalLink, AlertTriangle } from 'lucide-react';
 import ParticlesBackground from '@/components/ParticlesBackground';
 
 const guidesData: Record<string, any> = {
+  'sync-time': {
+    title: 'วิธี Sync Time - ตั้งเวลาคอมพิวเตอร์ให้ตรง',
+    description: 'แก้ปัญหาเวลาคอมพิวเตอร์ไม่ตรง ไม่สามารถเข้าเว็บไซต์ หรือเกมได้',
+    videoUrl: 'https://www.youtube.com/watch?v=1Y38h9BNgT8',
+    steps: [
+      {
+        title: '🕐 วิธีที่ 1: Sync Time อัตโนมัติ (แนะนำ)',
+        content: '1. กด Win + I เพื่อเปิด Settings\n2. ไปที่ "Time & Language"\n3. คลิก "Date & time"\n4. เปิด "Set time automatically"\n5. เปิด "Set time zone automatically"\n6. คลิก "Sync now" ใต้ "Synchronize your clock"\n7. เสร็จแล้ว!',
+      },
+      {
+        title: '🔧 วิธีที่ 2: ตั้งเวลาด้วยตัวเอง',
+        content: '1. กด Win + I → Time & Language → Date & time\n2. ปิด "Set time automatically"\n3. คลิก "Change" ใต้ "Set the date and time manually"\n4. ตั้งวันที่และเวลาที่ถูกต้อง\n5. คลิก "Change"\n6. เปิด "Set time automatically" กลับ',
+      },
+      {
+        title: '🌐 วิธีที่ 3: เปลี่ยน Time Server',
+        content: '1. กด Win + R → พิมพ์ "timedate.cpl" → Enter\n2. ไปที่แท็บ "Internet Time"\n3. คลิก "Change settings..."\n4. เลือก Server: "time.windows.com" หรือ "time.nist.gov"\n5. คลิก "Update now"\n6. คลิก "OK"',
+      },
+      {
+        title: '⚙️ วิธีที่ 4: ใช้คำสั่ง CMD',
+        content: '1. กด Win + X → เลือก "Command Prompt (Admin)" หรือ "PowerShell (Admin)"\n2. รันคำสั่ง:\n\nw32tm /resync\n\n3. รอสักครู่\n4. เสร็จแล้ว!',
+      },
+      {
+        title: '🔄 วิธีที่ 5: Restart Windows Time Service',
+        content: '1. กด Win + R → พิมพ์ "services.msc" → Enter\n2. หา "Windows Time" ในรายการ\n3. คลิกขวา → "Restart"\n4. ถ้าไม่ทำงาน คลิกขวา → "Properties"\n5. เปลี่ยน Startup type เป็น "Automatic"\n6. คลิก "Start" → "OK"',
+      },
+      {
+        title: '✅ ตรวจสอบเวลา',
+        content: '1. เปิดเว็บไซต์ https://time.is\n2. เช็คว่าเวลาตรงหรือไม่\n3. ถ้าตรงแล้ว เสร็จสิ้น!\n4. ถ้ายังไม่ตรง ลองวิธีอื่น',
+      },
+    ],
+    tips: [
+      'ดูวิดีโอสอนใช้งานด้านล่างเพื่อความเข้าใจที่ชัดเจนยิ่งขึ้น',
+      'เวลาไม่ตรงอาจทำให้เข้าเว็บไซต์ HTTPS ไม่ได้ (SSL Error)',
+      'เวลาไม่ตรงอาจทำให้เข้าเกมออนไลน์ไม่ได้',
+      'ควรเปิด "Set time automatically" ไว้เสมอ',
+      'ถ้าแก้ไม่ได้ อาจเป็นเพราะแบตเตอรี่ CMOS หมด (ต้องเปลี่ยน)',
+    ],
+  },
   'chrome-download': {
     title: 'วิธีแก้ปัญหา Google Chrome บล็อกการดาวน์โหลด',
     description: 'เมื่อ Chrome บล็อกการดาวน์โหลดไฟล์ เนื่องจากมองว่าเป็นไฟล์อันตราย',
