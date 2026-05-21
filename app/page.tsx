@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Download, Shield, Settings, HelpCircle, Sparkles, Clock, Monitor } from 'lucide-react';
+import { Download, Shield, Settings, HelpCircle, Sparkles, Clock, Monitor, FileX } from 'lucide-react';
 import ParticlesBackground from '@/components/ParticlesBackground';
 
 export default function Home() {
@@ -54,6 +54,13 @@ export default function Home() {
       description: 'วิธีแก้เมื่อ Chrome บล็อกการดาวน์โหลดไฟล์',
       icon: Download,
       gradient: 'from-red-500 to-orange-500',
+    },
+    {
+      id: 'delete-hosts',
+      title: 'ลบไฟล์ Hosts',
+      description: 'วิธีลบหรือรีเซ็ตไฟล์ hosts ใน System32',
+      icon: FileX,
+      gradient: 'from-amber-500 to-orange-600',
     },
     {
       id: 'remote-assistance',

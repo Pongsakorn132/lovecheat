@@ -326,6 +326,48 @@ const guidesData: Record<string, any> = {
       'เหมาะสำหรับผู้ที่ต้องการควบคุมระบบป้องกันด้วยตัวเอง',
     ],
   },
+  'delete-hosts': {
+    title: 'วิธีลบไฟล์ Hosts ใน System32',
+    description: 'ลบหรือรีเซ็ตไฟล์ hosts ที่ C:\\Windows\\System32\\drivers\\etc เมื่อมีการ redirect เว็บไซต์หรือบล็อกการเชื่อมต่อ',
+    warning: 'คำเตือน: ไฟล์ hosts เป็นไฟล์ระบบของ Windows ควรลบหรือแก้ไขเฉพาะเมื่อรู้ว่ามีบรรทัดแปลกปลอม (เช่น บล็อกเว็บหรือ redirect) แนะนำให้รีเซ็ตเป็นค่าเริ่มต้นแทนการลบทั้งไฟล์',
+    steps: [
+      {
+        title: '📁 ไฟล์ hosts อยู่ที่ไหน?',
+        content: 'ไฟล์ hosts อยู่ที่:\n\nC:\\Windows\\System32\\drivers\\etc\\hosts\n\n(อยู่ในโฟลเดอร์ drivers\\etc ภายใต้ System32 ไม่ใช่ที่รากของ System32 โดยตรง)\n\nไฟล์นี้ไม่มีนามสกุล ชื่อว่า "hosts" เท่านั้น',
+      },
+      {
+        title: '🟢 วิธีที่ 1: เปิดโฟลเดอร์ด้วย Run (แนะนำ)',
+        content: '1. กด Win + R\n2. พิมพ์:\n\n%windir%\\System32\\drivers\\etc\n\n3. กด Enter\n4. จะเห็นไฟล์ชื่อ "hosts" (ไม่มี .txt)\n5. ดำเนินการลบหรือแก้ไขตามวิธีถัดไป',
+      },
+      {
+        title: '✏️ วิธีที่ 2: ลบเนื้อหา / รีเซ็ตด้วย Notepad (Admin)',
+        content: '1. กด Win แล้วพิมพ์ "Notepad"\n2. คลิกขวา Notepad → "Run as administrator"\n3. ใน Notepad: File → Open\n4. ไปที่ C:\\Windows\\System32\\drivers\\etc\\\n5. เปลี่ยน "Text Documents (*.txt)" เป็น "All Files (*.*)"\n6. เลือกไฟล์ "hosts" → Open\n7. ลบบรรทัดที่ไม่ใช่ของระบบ (บรรทัดที่ไม่ขึ้นต้นด้วย # และไม่ใช่ localhost)\n8. หรือวางเนื้อหาค่าเริ่มต้นด้านล่างแล้ว Save\n\n--- เนื้อหา hosts ค่าเริ่มต้น ---\n# Copyright (c) 1993-2009 Microsoft Corp.\n#\n# This is a sample HOSTS file used by Microsoft TCP/IP for Windows.\n#\n# This file contains the mappings of IP addresses to host names. Each\n# entry should be kept on an individual line. The IP address should\n# be placed in the first column followed by the corresponding host name.\n# The IP address and the host name should be separated by at least one\n# space.\n#\n# Additionally, comments (such as these) may be inserted on individual\n# lines or following the machine name denoted by a \'#\' symbol.\n#\n# For example:\n#\n#      102.54.94.97     rhino.acme.com          # source server\n#       38.25.63.10     x.acme.com              # x client host\n\n# localhost name resolution is handled within DNS itself.\n#       127.0.0.1       localhost\n#       ::1             localhost',
+      },
+      {
+        title: '🗑️ วิธีที่ 3: ลบไฟล์ hosts ทั้งไฟล์',
+        content: '1. เปิดโฟลเดอร์ %windir%\\System32\\drivers\\etc (ตามวิธีที่ 1)\n2. คลิกขวาที่ไฟล์ "hosts"\n3. เลือก "Delete" หรือกด Delete บนคีย์บอร์ด\n4. ถ้าขึ้นว่า "You need permission" ให้ใช้วิธีที่ 4 แทน\n5. รีสตาร์ทคอมพิวเตอร์ — Windows อาจสร้างไฟล์ hosts ใหม่ให้อัตโนมัติ',
+      },
+      {
+        title: '⚙️ วิธีที่ 4: ลบด้วย CMD (Administrator)',
+        content: '1. กด Win + X → เลือก "Terminal (Admin)" หรือ "Command Prompt (Admin)"\n2. รันคำสั่งลบไฟล์:\n\ndel /f C:\\Windows\\System32\\drivers\\etc\\hosts\n\n3. ถ้าต้องการรีเซ็ตเป็นค่าเริ่มต้นแทนการลบ ให้รัน:\n\ncopy /y C:\\Windows\\System32\\drivers\\etc\\hosts.ics C:\\Windows\\System32\\drivers\\etc\\hosts\n\n(ถ้ามีไฟล์ hosts.ics)\n\n4. รีสตาร์ทคอมพิวเตอร์',
+      },
+      {
+        title: '🔐 วิธีที่ 5: แก้ปัญหาลบไม่ได้ (Permission denied)',
+        content: '1. คลิกขวาที่ไฟล์ hosts → Properties\n2. แท็บ Security → Advanced\n3. เปลี่ยน Owner เป็น Administrators (หรือบัญชีของคุณ)\n4. ให้สิทธิ์ Full control กับ Administrators\n5. Apply → OK แล้วลองลบหรือแก้ไขอีกครั้ง\n\nหรือปิดโปรแกรมที่อาจล็อกไฟล์ (เช่น VPN, แอนตี้ไวรัส) แล้วลองใหม่',
+      },
+      {
+        title: '✅ ตรวจสอบหลังลบ/รีเซ็ต',
+        content: '1. เปิดเว็บไซต์ที่เคยเข้าไม่ได้อีกครั้ง\n2. รัน ipconfig /flushdns ใน CMD (Admin) เพื่อล้าง DNS cache:\n\nipconfig /flushdns\n\n3. รีสตาร์ทเบราว์เซอร์\n4. ถ้ายังมีปัญหา ลองรีสตาร์ทคอมพิวเตอร์',
+      },
+    ],
+    tips: [
+      'โปรแกรมหรือมัลแวร์บางตัวแก้ไฟล์ hosts เพื่อบล็อกเว็บหรือ redirect — ควรสแกนเครื่องหลังรีเซ็ต',
+      'รีเซ็ตเนื้อหาเป็นค่าเริ่มต้นปลอดภัยกว่าการลบทั้งไฟล์',
+      'ต้องใช้สิทธิ์ Administrator ทุกครั้ง',
+      'หลังแก้ไข ควรรัน ipconfig /flushdns และรีสตาร์ทเบราว์เซอร์',
+      'ถ้า hosts ถูกสร้างใหม่ทุกครั้งที่เปิดเครื่อง อาจมีโปรแกรมแก้ไขอัตโนมัติ — ตรวจสอบแอนตี้ไวรัส',
+    ],
+  },
   'basic-troubleshooting': {
     title: 'แก้ปัญหาเบื้องต้น',
     description: 'ขั้นตอนพื้นฐานที่ควรลองก่อนเมื่อเจอปัญหาคอมพิวเตอร์',
